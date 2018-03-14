@@ -1,38 +1,28 @@
-const myProfile = {
-  hello: 'Hello, world!',
-  name: "I'm Phan Huy Hoang",
-  skill: ['HTML', 'CSS', 'Javascript']
+var nameVar = 'Hoang';
+var nameVar = 'Huy';
+console.log('nameVar', nameVar);
+
+let nameLet = 'Hung';
+// let nameLet = 'Phan'; error
+nameLet = 'Phan';
+console.log('nameLet', nameLet);
+
+const nameConst= 'Kiên';
+// const nameConst= 'Trung'; error
+// nameConst = 'Trung'; error
+console.log('nameConst', nameConst);
+
+var fullName = 'Hoang Phan';
+
+if (fullName) {
+  var firstName = fullName.split(" ")[0];
+  let firstNameLet = fullName.split(" ")[0];
+  const firstNameConst = fullName.split(" ")[0];
+  console.log('var', firstName);
+  console.log('let', firstNameLet);
+  console.log('const', firstNameConst);
 }
 
-const template = (
-  <div>
-    <h1>{myProfile.hello}</h1>
-    {myProfile.name &&  <p>{myProfile.name}</p>}
-    <p>{(myProfile.skill.length > 0) ? 'Here are your skills' : 'No skills' }</p>
-    {
-      myProfile.skill &&
-      <ol>
-        {myProfile.skill.map((item,index)=>{
-          return <li key={index}>{item}</li>
-        })}
-      </ol>
-    }
-  </div>
-);
-
-const user = {
-  name: 'Huy Hoang Phan',
-  age: 26,
-  location: 'Binh Dinh'
-}
-
-const templateTwo = (
-  <div>
-    <h1>{user.name ? user.name : 'Anonymous'}</h1>
-    {(user.age && user.age > 18) && <p>Age: {user.age}</p>}
-    {<p>user.location</p>}
-  </div>
-);
-const appRoot = document.getElementById('root');
-
-ReactDOM.render(template, appRoot);
+console.log(firstName);
+// console.log('let', firstNameLet); error
+// console.log('const', firstNameConst); error
