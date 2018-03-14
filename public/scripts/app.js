@@ -1,30 +1,22 @@
 'use strict';
 
-var nameVar = 'Hoang';
-var nameVar = 'Huy';
-console.log('nameVar', nameVar);
+var square = function square(x) {
+  return x * x;
+};
+console.log(square(3));
 
-var nameLet = 'Hung';
-// let nameLet = 'Phan'; error
-nameLet = 'Phan';
-console.log('nameLet', nameLet);
+// const squareArrow = (x) => {
+//   return x * x;
+// }
 
-var nameConst = 'Kiên';
-// const nameConst= 'Trung'; error
-// nameConst = 'Trung'; error
-console.log('nameConst', nameConst);
+var squareArrow = function squareArrow(x) {
+  return x * x;
+};
+console.log(squareArrow(5));
 
 var fullName = 'Hoang Phan';
+var getName = function getName(name) {
+  return name.split(' ')[0];
+};
 
-if (fullName) {
-  var firstName = fullName.split(" ")[0];
-  var firstNameLet = fullName.split(" ")[0];
-  var firstNameConst = fullName.split(" ")[0];
-  console.log('var', firstName);
-  console.log('let', firstNameLet);
-  console.log('const', firstNameConst);
-}
-
-console.log(firstName);
-// console.log('let', firstNameLet); error
-// console.log('const', firstNameConst); error
+console.log(getName(fullName));
