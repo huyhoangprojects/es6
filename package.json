@@ -1,0 +1,19 @@
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huyhoangprojects/es6.git"
+  },
+  "author": "huy-hoang.phan",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
