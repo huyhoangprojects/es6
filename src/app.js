@@ -1,16 +1,39 @@
-const square = function(x) {
-  return x * x;
+const add = function(a, b) {
+  console.log(arguments);
+  return a + b;
 }
-console.log(square(3));
+console.log(add(55, 22, 11));
+console.log('--------------');
+//  arguments objects - no longer bound with arrow function
+const addArrow = (a, b) => {
+  // console.log(arguments); error
+  return a + b;
+}
+console.log(addArrow(44, 22, 77))
+console.log('--------------');
 
-// const squareArrow = (x) => {
-//   return x * x;
-// }
 
-const squareArrow = (x) => x * x;
-console.log(squareArrow(5));
+const user = {
+  name: 'Huy Hoang Phan',
+  age: 26,
+  lived: ['Binh Dinh', 'Ho Chi Minh'],
+  showPlaceLived: function() {
+    console.log(this.name);
+    console.log(this.lived);
+    this.lived.forEach((place) => console.log(this.name + ' has lived in ' + place));
+  }
+}
 
-const fullName = 'Hoang Phan';
-const getName = (name) => name.split(' ')[0];
+user.showPlaceLived();
+console.log('--------------');
 
-console.log(getName(fullName));
+const multi = {
+  numbers: [10, 20,30],
+  multiBy: 3,
+  multiply() {
+    return this.numbers.map((num) => num * this.multiBy);
+  }
+}
+
+console.log(multi.multiply());
+console.log('--------------');
