@@ -1,48 +1,39 @@
 'use strict';
 
-var add = function add(a, b) {
-  console.log(arguments);
-  return a + b;
-};
-console.log(add(55, 22, 11));
-console.log('--------------');
-//  arguments objects - no longer bound with arrow function
-var addArrow = function addArrow(a, b) {
-  // console.log(arguments); error
-  return a + b;
-};
-console.log(addArrow(44, 22, 77));
-console.log('--------------');
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var user = {
-  name: 'Huy Hoang Phan',
-  age: 26,
-  lived: ['Binh Dinh', 'Ho Chi Minh'],
-  showPlaceLived: function showPlaceLived() {
-    var _this = this;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-    console.log(this.name);
-    console.log(this.lived);
-    this.lived.forEach(function (place) {
-      return console.log(_this.name + ' has lived in ' + place);
-    });
+var Person = function () {
+  function Person() {
+    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Anonymous';
+    var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+    _classCallCheck(this, Person);
+
+    this.name = name;
+    this.age = age;
   }
-};
 
-user.showPlaceLived();
-console.log('--------------');
+  _createClass(Person, [{
+    key: 'greeting',
+    value: function greeting() {
+      return 'I\'m ' + this.name + '!';
+    }
+  }, {
+    key: 'description',
+    value: function description() {
+      return this.name + ' is ' + this.age + ' year(s) old.';
+    }
+  }]);
 
-var multi = {
-  numbers: [10, 20, 30],
-  multiBy: 3,
-  multiply: function multiply() {
-    var _this2 = this;
+  return Person;
+}();
 
-    return this.numbers.map(function (num) {
-      return num * _this2.multiBy;
-    });
-  }
-};
+var me = new Person('Huy Hoang Phan', 26);
+console.log(me.name);
+console.log(me.description());
 
-console.log(multi.multiply());
-console.log('--------------');
+var other = new Person();
+console.log(other.name);
+console.log(other.description());
