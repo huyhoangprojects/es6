@@ -11,11 +11,43 @@ class Person {
   }
 }
 
-const me = new Person('Huy Hoang Phan', 26);
-console.log(me.name);
-console.log(me.description());
+class Student extends Person {
+  constructor(name, age, major) {
+    super(name, age);
+    this.major = major;
+  }
+  hasMajor() {
+    return !!this.major;
+  }
+  getDesc() {
+    let desc = this.description();
+    if(this.hasMajor()) {
+      desc += ` Their major is ${this.major}`;
+    }
+    return desc;
+  }
+}
 
-const other = new Person();
-console.log(other.name);
-console.log(other.description());
+class Traveller extends Person {
+  constructor(name, lived) {
+    super(name);
+    this.lived = lived;
+  }
+  hasLived() {
+    return !!this.lived;
+  }
+  greet() {
+    let hello = super.greeting();
+    if(this.hasLived) {
+      hello += ` I'm visiting from ${this.lived}.`;
+    }
+    return hello;
+  }
+}
+
+const me = new Traveller('Huy Hoang Phan', 'Binh Dinh');
+console.log(me.greet());
+
+const other = new Student();
+console.log(other.getDesc());
 
